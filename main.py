@@ -10,11 +10,6 @@ app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-fake_db = [
-    {"id": 1, "name": "BMW", "color": "blue"},
-    {"id": 1, "name": "BMW", "color": "blue"},
-]
-
 
 @app.get("/")
 async def read_item(
@@ -36,7 +31,7 @@ async def arina_the_best(request: Request):
     """
     page client you choose Arina
     """
-    count = database.get("arina")
+    count = database.get("arina") if database.get("arina") else 0
     return templates.TemplateResponse(
         request=request,
         name="arina_the_best.html",
@@ -49,7 +44,7 @@ async def nur_the_best(request: Request):
     """
     page client you choose Nurlan
     """
-    count = database.get("nurlan")
+    count = database.get("nurlan") if database.get("nurlan") else 0
 
     return templates.TemplateResponse(
         request=request,
