@@ -1,0 +1,47 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    background-image: url(/static/ing/фото-6.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+
+@media screen and (max-width: 750px) {
+    body {
+        background-image: url(/static/ing/photo_2024-09-07\ 19.25.41.jpeg);
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+.flex{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.arina{
+    font-size: 5vw;
+    min-height: 100%;
+}
+
+@media screen and (max-width: 750px) {
+    .arina{
+        font-size: 9vw;
+        min-height: 100%;
+        color: #c5c5c5;
+    }
+}
+    
+
+.thanks{
+    margin: 2vw;
+
+}
+
+.compliment{
+    margin: 2vw;
+}
